@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% include "components/head.html" %}
+
+  <!-- prettier-ignore -->
+  <body class="{{ pageClass }}">
+    {% include "components/nav.html" %} 
+    {% include "components/header.html" %}
+
+    <main class="content" tabindex="-1">
+      <h1>{{ pageTitle }}</h1>
+
+      {{ content }}
+    </main>
+
+    <script type="module" src="/js/scripts.js"></script>
+  </body>
+</html>
