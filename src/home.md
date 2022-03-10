@@ -8,6 +8,4 @@ layout: layouts/layout.html
 tags: [page, nav]
 ---
 
-## Articles
-
-<div class="stories">Loading...</div>
+## NYT's Best Seller's List

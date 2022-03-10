@@ -53,15 +53,40 @@ p {
 }
 
 figcaption {
+  margin-bottom: 5px;
   font-size: 0.8rem;
 }
 
-.stories .item {
+.bookItems .item {
   border-bottom: 1px dashed #aaa;
 }
 
 @media (min-width: 480px) {
-  .stories {
+  .bookItems {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem;
+  }
+}
+
+.movieItems .item {
+  border-bottom: 1px dashed #aaa;
+}
+
+@media (min-width: 480px) {
+  .movieItems {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem;
+  }
+}
+
+.newsItems .item {
+  border-bottom: 1px dashed #aaa;
+}
+
+@media (min-width: 480px) {
+  .newsItems {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 2rem;
