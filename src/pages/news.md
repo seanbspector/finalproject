@@ -7,6 +7,6 @@ date: 2019-02-01
 
 ## NYT's Top View Articles
 
-<div class="movieItems">Loading...</div>
+<div class="newsItems">Loading...</div>
 
 [Home](/)

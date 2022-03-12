@@ -1,11 +1,11 @@
 ---
-pageTitle: Home
 navTitle: Home
 pageClass: home
 date: 2010-01-01
 permalink: /
 layout: layouts/layout.html
 tags: [page, nav]
+singleImage: /img/library.jpeg
 ---
 
-## NYT's Best Seller's List
+![alt info goes here]( {{ singleImage }} )

@@ -23,13 +23,13 @@ function getStories() {
 }
 
 function showBooksData(books) {
-  const bookDate = books.bestsellers_date;
+  console.log(books);
   const looped = books.books
     .map(
       (book) => `
     <div class="item">
     <img src="${book.book_image ? book.book_image : ""}" />
-    <h3><a href="${book.title}">${book.title}</a></h3>
+    <h3><a href="${book.buy_links[1].url}">${book.title}</a></h3>
     <h4><a href="${book.author}">${book.author}</a></h4>
     <figcaption>${book.description ? book.description : ""}</figcaption>
     </div>
@@ -39,7 +39,6 @@ function showBooksData(books) {
   document.querySelector(".bookItems").innerHTML = looped;
 
   setWithExpiry(booksStoragePrefix, looped, 1000 * 60 * 10);
-  console.log(bookDate);
 }
 
 if (document.querySelector(".books")) {
@@ -69,7 +68,7 @@ function showMovieData(movies) {
       (movie) =>
         `    <div class="item">
     <img src="${movie.multimedia ? movie.multimedia.src : ""}" />
-    <h3><a href="${movie.headline}">${movie.headline}</a></h3>
+    <h3><a href="${movie.link.url}">${movie.headline}</a></h3>
     <figcaption>${movie.summary_short ? movie.summary_short : ""}</figcaption>
     </div>`
     )
@@ -100,16 +99,21 @@ function getNews() {
 }
 
 function showNewsData(newsArticles) {
-  console.log(newsArticles);
   const looped = newsArticles
     .map(
       (newsArticle) =>
         `    <div class="item">
-  <h3><a href="${newsArticle.title}">${newsArticle.title}</a></h3>
-  <figcaption>${newsArticle.abstract ? newsArticle.abstract : ""}</figcaption>
-  </div>`
+      <img src="${
+        newsArticle.media ? newsArticle.media[0]["media-metadata"][1].url : ""
+      }" />
+      <h3><a href="${newsArticle.url}">${newsArticle.title}</a></h3>
+      <figcaption>${
+        newsArticle.abstract ? newsArticle.abstract : ""
+      }</figcaption>
+      </div>`
     )
     .join("");
+  console.log(looped);
   document.querySelector(".newsItems").innerHTML = looped;
   setWithExpiry(newsStoragePrefix, looped, 1000 * 60 * 10);
 }
